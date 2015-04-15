@@ -1,27 +1,27 @@
-package main
-
-import "fmt"
-/*
-#include <stdlib.h>
-*/
-import  "C"
-
-func main(){
-    fmt.Println(int(C.random()))
-}
 //package main
-//// int fortytwo()
-//// {
-////	    return 42;
-//// }
-//import "C"
-//import "fmt"
 //
-//func main() {
-//f := C.intFunc(C.fortytwo)
-//fmt.Println(int(C.bridge_int_func(f)))
-//// Output: 42
+//import "fmt"
+///*
+//#include <stdlib.h>
+//*/
+//import  "C"
+//
+//func main(){
+//    fmt.Println(int(C.random()))
 //}
+
+package main
+import "fmt"
+// int fortytwo()
+// {
+//	    return 42;
+// }
+import "C"
+
+func main() {
+fmt.Println(int(C.fortytwo()))
+// Output: 42
+}
 
 
 //package main
