@@ -6,13 +6,13 @@ cd ..
 
 //compile the wrapper
 cd wrapper
-g++ -I. -I../c++ -c MyWrapper.cpp -o MyWrapper.o
+g++ -fPIC -I. -I../c++ -c MyWrapper.cpp -o MyWrapper.o
 
 cd ..
 
 cd c
 //compile the c
-gcc -I../wrapper -c MyMain_c.c -o MyMain_c.o
+gcc -fPIC  -I../wrapper -c MyMain_c.c -o MyMain_c.
 
 //Note that the linking has to be done with the C++ comiler, a C linker like ldd does not work:
-g++ MyMain_c.o ../wrapper/MyWrapper.o ../c++/MyClass.o -o MyMain_c
+g++ -shared -o c/libMyMain_c.so c/MyMain_c.o wrapper/MyWrapper.o c++/MyClass.o -L/usr/lib
