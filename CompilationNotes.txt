@@ -1,0 +1,18 @@
+//Compile the class
+cd c++
+g++ -I. -c MyClass.cpp -o MyClass.o
+
+cd ..
+
+//compile the wrapper
+cd wrapper
+g++ -I. -I../c++ -c MyWrapper.cpp -o MyWrapper.o
+
+cd ..
+
+cd c
+//compile the c
+gcc -I../wrapper -c MyMain_c.c -o MyMain_c.o
+
+//Note that the linking has to be done with the C++ comiler, a C linker like ldd does not work:
+g++ MyMain_c.o ../wrapper/MyWrapper.o ../c++/MyClass.o -o MyMain_c
