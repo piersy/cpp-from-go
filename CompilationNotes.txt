@@ -15,4 +15,4 @@ cd c
 gcc -fPIC  -I../wrapper -c MyMain_c.c -o MyMain_c.
 
 //Note that the linking has to be done with the C++ comiler, a C linker like ldd does not work:
-g++ -shared -o c/libMyMain_c.so c/MyMain_c.o wrapper/MyWrapper.o c++/MyClass.o -L/usr/lib
+g++ -shared -o ../libMyMain_c.so c/MyMain_c.o wrapper/MyWrapper.o c++/MyClass.o -L/usr/lib
