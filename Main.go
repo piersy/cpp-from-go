@@ -34,6 +34,6 @@ import "fmt"
 import "C"
 //This worked only after i copied libMyMain.so into /usr/lib ??
 func main() {
-    C.pain(C.int(5), nil)
+    fmt.Println(C.pain(C.int(5), nil))
     fmt.Println(5)
 }

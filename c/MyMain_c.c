@@ -6,4 +6,5 @@ int pain(int argc, char* argv[]) {
         MyClass_int_set(c, 3);
         printf("%i\n", MyClass_int_get(c));
         deleteMyClass(c);
+        return 42;
 }
